@@ -1,14 +1,32 @@
-<h1>Banner goes here</h1>
+<div class="banner"
+style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+url(https://images.unsplash.com/photo-1521967906867-14ec9d64bee8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80);">
+  <div class="container container-banner">
+    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
+    <p>Change your life and learn to code at one of our campuses around the world.</p>
+    <%= link_to "My Lists", lists_path, class: "my-list-link" %>
+  </div>
+</div>
 
-<h2>My lists</h2>
-
-<ul>
-  <% @lists.each do |list| %>
-    <li>
-      <%= link_to "#{list.name}", list_path(list) %>
-      <%= cl_image_tag list.photo.key, height: 40, width: 40, crop: :fill, radius: 50 if list.photo.attached? %>
-    </li>
-  <% end %>
-</ul>
-
-<%= link_to "Add a new list", new_list_path%>
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h1 class="mb-0">My Lists</h1>
+    <%= link_to "Create a movie list", new_list_path, class: "btn btn-flat" %>
+  </div>
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="co-12 col-sm-6 col-md-4 mb-3">
+        <div class="card" style="width: 20rem;">
+          <div class="image_tag"><%= cl_image_tag list.photo.key, height: 270  if list.photo.attached?%></div>
+          <div class="card-body">
+            <h1 class="card-title"> <%= list.name %> </h1>
+            <p class="card-text"> <%= list.name %> </p>
+            <div class="text-center">
+              <%= link_to "View list", list_path(list), style: "text-decoration: none;", class: "btn-flat-view" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

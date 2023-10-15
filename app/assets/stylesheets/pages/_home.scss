@@ -1,1 +1,27 @@
 // Specific CSS for your home-page
+
+.container-banner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+
+.my-list-link{
+  display: block;
+  width: 300px;
+  text-decoration: none;
+  color:  #1EDD88;
+  width: 300px;
+  font-size: 20px;
+  text-align: center;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #ffffff;
+  transition: background 0.3s ease;
+}
+
+.image_tag {
+  display: flex;
+  justify-content: center;
+}
