@@ -4,8 +4,8 @@
   <% @lists.each do |list| %>
     <li>
       <%= link_to "#{list.name}", list_path(list) %>
+      <%= cl_image_tag list.photo.key, height: 40, width: 40, crop: :fill, radius: 50 if list.photo.attached? %>
     </li>
+
   <% end %>
 </ul>
-
-<pe></pe>
