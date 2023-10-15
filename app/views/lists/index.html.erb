@@ -7,9 +7,11 @@
     <% @lists.each do |list| %>
       <div class="co-12 col-sm-6 col-md-4 mb-3">
         <div class="card" style="width: 20rem;">
+        <!--
           <% if list.photo.attached? %>
               <div class="image_tag"><%= cl_image_tag list.photo.key, height: 270 %> </div>
           <% end %>
+        -->
           <div class="card-body">
             <h1 class="card-title"> <%= list.name %> </h1>
             <p class="card-text"> <%= list.name %> </p>
